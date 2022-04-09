@@ -5,6 +5,11 @@ from os import listdir
 import os.path
 import csv
 
+def read_json(json_file_name):
+    with open(json_file_name, 'r') as file:
+        data = json.load(file)
+        return data
+        
 def write_json(jsonFileName, data):
     with open(jsonFileName, 'w') as file:
         json.dump(data, file, ensure_ascii=False, allow_nan=False)
@@ -35,11 +40,6 @@ def clear_temp():
             if os.path.isfile(file_path):
                 os.remove(file_path)
         os.rmdir(dir)
-
-def read_json(json_file_name):
-    with open(json_file_name, 'r') as file:
-        data = json.load(file)
-        return data
 
 def read_event(json_file_name, runners):
     event = read_json(json_file_name)

@@ -132,3 +132,4 @@ output/
 temp/
 *.csv
 *.json
+*.zip
